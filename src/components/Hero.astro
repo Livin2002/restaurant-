@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import Burger from "../assets/burger.png";
+import Onion from "../assets/onion.png";
+import Tomato from "../assets/tomato.png";
+import Lettuce from "../assets/lettuce.png";
+---
+
+<main>
+  <div class="container">
+    <div class="centered">BURGER</div>
+    <Image src={Burger} alt="BurgerImages" class="image burger" />
+    <Image src={Tomato} alt="BurgerImages" class="image tomato" />
+    <Image src={Onion} alt="BurgerImages" class="image onion" />
+    <Image src={Lettuce} alt="BurgerImages" class="image lettuce" />
+  </div>
+</main>
+
+<style>
+  main {
+    background-color: orangered;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1450px;
+    margin: 0 auto;
+    height: 120vh;
+  }
+  .centered {
+    font-size: 15rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    z-index: 100;
+    background-color: transparent;
+    color: rgba(255, 68, 0, 0.336);
+    -webkit-text-stroke: 4px rgb(255, 255, 255); /* Adding a black border */
+  }
+  .image {
+    position: absolute;
+  }
+  .burger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Set image behind the text */
+    width: 600px;
+    height: auto;
+  }
+  .onion {
+    width: 300px;
+    height: auto;
+    top: 65%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* Set image behind the text */
+  }
+  .lettuce {
+    width: 300px;
+    height: auto;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  .tomato {
+    width: 300px;
+    height: auto;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+</style>
